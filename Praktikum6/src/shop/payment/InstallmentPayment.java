@@ -7,9 +7,13 @@ public interface InstallmentPayment extends PaymentMethod {
     default long monthlyInstallment(long amount, int months) {
         if (months < 1 || months > maxInstallmentMonths()) {
             throw new IllegalArgumentException(
-                "Months must be between 1 and " + maxInstallmentMonths());
+                    "Months must be between 1 and " + maxInstallmentMonths());
         }
         return (amount + months - 1) / months; // Round up
+    }
+
+    default String policy() {
+        return "Cicilan maksimal " + maxInstallmentMonths() + " bulan";
     }
 
 }

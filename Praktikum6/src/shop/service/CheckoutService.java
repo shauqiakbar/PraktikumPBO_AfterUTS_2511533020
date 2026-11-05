@@ -38,12 +38,17 @@ public class CheckoutService {
         return subtotal + shippingCost;
     }
 
+    public long grandTotal(List<Product> items, ShippingService shipping, PaymentMethod payment) {
+        long total = total(items, shipping);
+        return total + payment.adminFee(total);
+    }
+
     public boolean checkout(List<Product> items, ShippingService shipping, PaymentMethod payment) {
         if (shipping == null || payment == null || items == null || items.isEmpty()) {
             return false;
         }
 
-        long total = total(items, shipping);
-        return payment.pay(total);
+        long grandTotal = grandTotal(items, shipping, payment);
+        return payment.pay(grandTotal);
     }
 }

@@ -1,5 +1,7 @@
 package shop.payment;
 
+import shop.StudentInfo;
+
 public class CreditCardPayment implements RefundablePayment, InstallmentPayment {
     private final String cardHolder;
     private final long creditLimit;
@@ -16,7 +18,7 @@ public class CreditCardPayment implements RefundablePayment, InstallmentPayment 
         this.creditLimit = creditLimit;
     }
 
-    @Override 
+    @Override
     public String getName() {
         return "Kartu Kredit (" + cardHolder + ")";
     }
@@ -35,7 +37,7 @@ public class CreditCardPayment implements RefundablePayment, InstallmentPayment 
         return 12;
     }
 
-    @Override 
+    @Override
     public boolean refund(long amount) {
         if (amount <= 0 || amount > usedCredit) {
             return false;
@@ -44,7 +46,18 @@ public class CreditCardPayment implements RefundablePayment, InstallmentPayment 
         return true;
     }
 
+    @Override
+    public long adminFee(long amount) {
+        return amount * StudentInfo.CARD_ADMIN_PERCENT / 100;
+    }
+
+    @Override
+    public String policy() {
+        return RefundablePayment.super.policy() + "; " + InstallmentPayment.super.policy();
+    }
+
     public long getUsedCredit() {
         return usedCredit;
+
     }
 }
