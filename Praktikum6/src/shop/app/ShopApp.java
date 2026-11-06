@@ -16,7 +16,7 @@ import shop.shipping.RegularShipping;
 import shop.shipping.ShippingService;
 
 public class ShopApp {
-    public static final void main(String[] args) {
+    public static void main(String[] args) {
         // L1: abstract class and abstract method
         Product coffee = new PhysicalProduct("KOPI-001", "Kopi Arabika Gayo 250g", 85_000, 300);
         Product rendang = new PhysicalProduct("RDG-002", "Rendang Kemasan 250g", 120_000, 400);
