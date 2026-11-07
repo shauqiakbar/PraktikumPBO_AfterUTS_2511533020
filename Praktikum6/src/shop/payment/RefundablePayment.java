@@ -7,5 +7,3 @@ public interface RefundablePayment extends PaymentMethod {
         return "Refund maksimal 7 hari";
     }
 }
-
-

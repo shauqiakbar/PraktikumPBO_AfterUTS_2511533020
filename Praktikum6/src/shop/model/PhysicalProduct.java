@@ -1,5 +1,7 @@
 package shop.model;
+
 import shop.shipping.Shippable;
+
 public class PhysicalProduct extends Product implements Shippable {
     private final int weightGrams;
 
@@ -11,10 +13,14 @@ public class PhysicalProduct extends Product implements Shippable {
         this.weightGrams = weightGrams;
     }
 
-    @Override 
-    public int getWeightGrams() { return weightGrams; }
+    @Override
+    public int getWeightGrams() {
+        return weightGrams;
+    }
 
     @Override
-    public String category() { return "Fisik"; }
+    public String category() {
+        return "Fisik";
+    }
 
 }

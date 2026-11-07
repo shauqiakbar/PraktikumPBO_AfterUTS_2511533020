@@ -17,14 +17,21 @@ public class Order {
         this.shippingAddress = shippingAddress;
     }
 
-    public String getOrderId() { return orderId; }
-    public Address getShippingAddress() { return shippingAddress; }
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public Address getShippingAddress() {
+        return shippingAddress;
+    }
 
     public void addLine(Product product, int quantity) {
         lines.add(new Line(product, quantity));
     }
 
-    public List<Line> getLines() { return Collections.unmodifiableList(lines); }
+    public List<Line> getLines() {
+        return Collections.unmodifiableList(lines);
+    }
 
     public long getItemsTotal() {
         long total = 0;
@@ -51,8 +58,13 @@ public class Order {
             this.quantity = quantity;
         }
 
-        public Product getProduct() { return product; }
-        public int getQuantity() { return quantity; }
+        public Product getProduct() {
+            return product;
+        }
+
+        public int getQuantity() {
+            return quantity;
+        }
 
         public long subtotal() {
             return product.getFinalPrice() * quantity;
@@ -66,8 +78,8 @@ public class Order {
             sb.append("STRUK PESANAN ").append(Order.this.orderId).append("\n");
             for (Line line : lines) {
                 sb.append("- ").append(line.getProduct().getName())
-                  .append(" x").append(line.getQuantity())
-                  .append(" = Rp").append(line.subtotal()).append("\n");
+                        .append(" x").append(line.getQuantity())
+                        .append(" = Rp").append(line.subtotal()).append("\n");
             }
             sb.append("Total barang: Rp").append(getItemsTotal()).append("\n");
             sb.append("Kirim ke: ").append(Order.this.shippingAddress);

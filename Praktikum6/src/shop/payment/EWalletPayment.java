@@ -19,7 +19,7 @@ public class EWalletPayment implements RefundablePayment {
         return balance;
     }
 
-    @Override 
+    @Override
     public boolean refund(long amount) {
         if (amount <= 0) {
             return false;

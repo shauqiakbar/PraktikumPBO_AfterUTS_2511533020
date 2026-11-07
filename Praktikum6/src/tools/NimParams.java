@@ -1,7 +1,8 @@
 package tools;
 
 /**
- * Prints the personal parameters for the take-home assignment, derived from a student ID (NIM).
+ * Prints the personal parameters for the take-home assignment, derived from a
+ * student ID (NIM).
  *
  * Run: java -cp out tools.NimParams 2401010057
  */
