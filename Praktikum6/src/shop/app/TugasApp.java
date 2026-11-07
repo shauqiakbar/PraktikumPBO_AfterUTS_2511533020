@@ -58,16 +58,16 @@ public class TugasApp {
             }
         });
 
-        String message = "Pesanan ORD-0001 sudah dikirim dengan kurir Ekspres. "
+        String message = "Pesanan ORD-0005 sudah dikirim dengan kurir Ekspres. "
                 + "Nomor resi akan muncul di aplikasi dalam 1x24 jam. "
-                + "Terima kasih telah berbelanja produk UMKM Sumatera Barat di toko kami! "
+                + "Terima Kasih Telah Berbelanja Product Kami! "
                 + "Hubungi layanan pelanggan kami jika ada pertanyaan lebih lanjut.";
 
-        CustomerContact siti = new CustomerContact("Siti Rahma", "siti@example.com", "081234567890");
-        CustomerContact budi = new CustomerContact("Budi", null, "+6281298765432");
+        CustomerContact dennis = new CustomerContact("Siti Rahma", "siti@example.com", "081234567890");
+        CustomerContact akmal = new CustomerContact("Budi", null, "+6281298765432");
 
-        System.out.println("Terkirim ke Siti lewat " + service.broadcast(siti, message) + " kanal");
-        System.out.println("Terkirim ke Budi lewat " + service.broadcast(budi, message) + " kanal");
+        System.out.println("Terkirim ke Dennis lewat " + service.broadcast(dennis, message) + " kanal");
+        System.out.println("Terkirim ke Akmal lewat " + service.broadcast(akmal, message) + " kanal");
     }
 
     private static void printTotal(CheckoutService checkout, List<Product> cart,
