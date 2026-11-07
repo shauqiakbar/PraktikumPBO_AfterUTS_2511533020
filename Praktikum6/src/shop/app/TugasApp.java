@@ -29,7 +29,7 @@ public class TugasApp {
         ShippingService express = new ExpressShipping();
         EWalletPayment wallet = new EWalletPayment("DompetKu", 1_000_000);
         PaymentMethod transfer = new BankTransferPayment("Bank Nagari");
-        CreditCardPayment card = new CreditCardPayment("Siti Rahma", 1_000_000);
+        CreditCardPayment card = new CreditCardPayment("Dennis Shauqi", 1_000_000);
 
         System.out.println("\n== T1: Total dengan biaya admin (Ekspres) ==");
         printTotal(checkout, cart, express, wallet);
@@ -63,8 +63,8 @@ public class TugasApp {
                 + "Terima Kasih Telah Berbelanja Product Kami! "
                 + "Hubungi layanan pelanggan kami jika ada pertanyaan lebih lanjut.";
 
-        CustomerContact dennis = new CustomerContact("Siti Rahma", "siti@example.com", "081234567890");
-        CustomerContact akmal = new CustomerContact("Budi", null, "+6281298765432");
+        CustomerContact dennis = new CustomerContact("Dennis Shauqi", "dennis@example.com", "081234567890");
+        CustomerContact akmal = new CustomerContact("Akmal Maulana", null, "+6282376987631");
 
         System.out.println("Terkirim ke Dennis lewat " + service.broadcast(dennis, message) + " kanal");
         System.out.println("Terkirim ke Akmal lewat " + service.broadcast(akmal, message) + " kanal");
