@@ -10,3 +10,7 @@ bin/
 .vscode/
 *.zip
 out/
+bin/
+out/
+out_err/
+.DS_Store
